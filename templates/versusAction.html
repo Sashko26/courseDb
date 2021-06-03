@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+{% block body %}
+    <h2>VERSUS</h2>
+
+
+
+        <table class="table">
+  <thead>
+    <tr>
+
+
+        <th scope="col">Type</th>
+      <th scope="col">Time Of request</th>
+      <th scope="col">title of request</th>
+    </tr>
+  </thead>
+  <tbody>
+
+       <tr>
+           <td ><a href="{{"request/"+firstRequest.time}}"> {{ firstRequest.time}} </a></td>
+        <td><a href="{{"request/"+firstRequest.time}}">{{ firstRequest.type}}</a></td>
+        <td><a href="{{"request/"+firstRequest.time}}">{{ firstRequest.search}}</a></td>
+       </tr>
+        <tr>
+           <td ><a href="{{"request/"+secondRequest.time}}"> {{ secondRequest.time}} </a></td>
+        <td><a href="{{"request/"+secondRequest.time}}">{{ secondRequest.type}}</a></td>
+        <td><a href="{{"request/"+secondRequest.time}}">{{ secondRequest.search}}</a></td>
+       </tr>
+
+  </tbody>
+</table>
+    <h2>Comparison of price charts</h2>
+
+    <img src='../static/images/saved-figure.png' alt="picture"/>
+    <img src='../static/images/saved-figure-circle.png' alt="picture"/>
+
+
+    <h1>Median for first request -"{{firstRequest.search}}" :  {{ median1 }} UAH.</h1>
+    <h1>Median for second request -"{{secondRequest.search}}":  {{ median2 }} UAH.</h1>
+    <h1>Amount Of ads:{{ amountOfads1 }}</h1>
+    <h1>Amount Of ads:{{ amountOfads2 }}</h1>
+
+
+{% endblock %}

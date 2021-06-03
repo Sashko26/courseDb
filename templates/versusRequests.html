@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+{% block body %}
+
+
+    <h1>VERSUS requests</h1>
+    <form action="/versus_action" method="post">
+<select class="form-control" name="first_versus_select"  aria-label="size 3 select example">
+  {% for request in requests %}
+            <option value="{{ request.time }}">{{ request.time+" "+" "+request.search}}</option>
+  {% endfor %}
+</select>
+    <select class="form-control" name="second_versus_select"  aria-label="size 3 select example">
+        {% for request in requests %}
+            <option value="{{ request.time }}">{{ request.time+" "+" "+request.search}}</option>
+        {% endfor %}
+    </select>
+    <button type="submit" class="btn btn-primary">Get ads!</button>
+    </form>
+{% endblock %}
+

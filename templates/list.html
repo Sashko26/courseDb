@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+{% block body %}
+
+
+
+{%if bool_requests%}
+    <table class="table">
+  <thead>
+    <tr>
+
+
+        <th scope="col">Type</th>
+      <th scope="col">Time Of request</th>
+      <th scope="col">title of request</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for request in requests %}
+
+       <tr>
+           <td ><a href="{{"request/"+request.time}}"> {{ request.type }} </a></td>
+        <td><a href="{{"request/"+request.time}}">{{ request.time }}</a></td>
+        <td><a href="{{"request/"+request.time}}">{{ request.search}}</a></td>
+       </tr>
+
+  {% endfor %}
+  </tbody>
+</table>
+    {% endif %}
+
+
+
+
+
+
+    {% if bool_arrayOfAllDevices%}
+    <table class="table">
+  <thead>
+    <tr>
+
+
+        <th scope="col">title</th>
+      <th scope="col">price</th>
+      <th scope="col">link</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for device in arrayOfAllDevices %}
+
+       <tr>
+           <td><a href="{{ device.link}}">{{ device.title }}</a></td>
+        <td><a href="{{ device.link}}">{{ device.price}}</a></td>
+        <td><a href="{{ device.link}}">{{ device.link}}</a></td>
+       </tr>
+
+  {% endfor %}
+  </tbody>
+</table>
+    {% endif %}
+
+
+
+{% endblock %}

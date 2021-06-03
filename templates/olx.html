@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+
+{% block body %}
+
+    <h1>Smartphones of OLX</h1>
+
+
+<form action="/olx_request" method="post">
+  <input type="text" class="form-control" name="search_request" placeholder="search request">
+  <div class="form-group">
+      <label  for="exampleFormControlSelect1">Condition:</label>
+       <select  class="form-control" id="exampleFormControlSelect2" name="state">
+           <option>all</option>
+           <option>used</option>
+        <option>new</option>
+
+       </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect2">Brand phone:</label>
+
+   <select name="producer"  class="form-control" id="exampleFormControlSelect2">
+        <option>all</option>
+  <option>acer</option>
+  <option>alcatel-Lucent</option>
+    <option>anydata</option>
+    <option>apple</option>
+    <option>asus</option>
+    <option>bbk</option>
+    <option>benq-siemens</option>
+    <option>blackberry</option>
+    <option>daewoo</option>
+    <option>fly</option>
+     <option>google</option>
+    <option>helio</option>
+    <option>hp</option>
+    <option>htc</option>
+    <option>huawei</option>
+    <option>lenovo</option>
+    <option>lg</option>
+    <option>meizu</option>
+    <option>mio</option>
+    <option>motorola</option>
+    <option>nokia</option>
+    <option>panasonic</option>
+    <option>motorola</option>
+    <option>toshiba</option>
+    <option>vertu</option>
+    <option>sony</option>
+    <option>xiaomi</option>
+</select>
+  </div>
+     <button type="submit" class="btn btn-primary">Get ads!</button>
+
+</form>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
